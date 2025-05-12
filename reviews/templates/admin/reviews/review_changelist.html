@@ -1,0 +1,13 @@
+{% extends 'admin/change_list.html' %}
+
+{% block content %}
+  <div>
+    <h3>Statistiques des avis</h3>
+    <ul>
+      <li><strong>Total des avis :</strong> {{ stats.total_reviews }}</li>
+      <li><strong>Avis non modifiés :</strong> {{ stats.unchanged_count }}</li>
+      <li><strong>Moyenne des écarts :</strong> {{ stats.avg_diff }}</li>
+    </ul>
+  </div>
+  {{ block.super }}
+{% endblock %}

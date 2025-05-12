@@ -1,0 +1,10 @@
+<h1>Note prédite : {{ predicted_rating }} ⭐</h1>
+<p>Êtes-vous d'accord avec cette note ? Vous pouvez la modifier si besoin.</p>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="predicted_rating" value="{{ predicted_rating }}">
+  <input type="hidden" name="content" value="{{ content }}">
+  <button type="submit" name="confirm">Valider</button>
+</form>
